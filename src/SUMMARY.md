@@ -42,3 +42,12 @@
     - [Serveis programats](./Booting/systemd/programats.md)
     - [Anàlisi de logs](./Booting/systemd/logs.md)
     - [Afegint informació d'inici](./Booting/systemd/inici.md)
+
+# Laboratoris Sistema de Fitxers
+
+- [Sistema de Fitxers](./Filesystems/main.md)
+  - [Muntatge d'un disc extern per fer un backup](./Filesystems/backup.md)
+  - [Migració de directoris a particions diferents](./Filesystems/migration.md)
+  - [Simulant una corrupció a home i recuperant-la](./Filesystems/corruption.md)
+  - [Sistemes de fitxers temporals](./Filesystems/temporal.md)
+  - [Explorant d'un sistema de fitxers avançat: `zfs`](./Filesystems/zfs.md)

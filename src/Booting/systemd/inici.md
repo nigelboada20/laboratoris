@@ -12,7 +12,7 @@ Breument, tal com vam veure al curs de sistemes operatius, els scripts d'arranca
 - `~/.bashrc`: Script d'arrancada específic de l'usuari per a la shell bash.
 - `/root/.profile`: Script d'arrancada específic de l'usuari root per a la shell sh i altres shells compatibles.
 
-Aquests scripts s'executen en un ordre específic quan un usuari inicia una sessió de terminal. A continuació, veurem una descripció de cada script d'arrancada i el seu ús, així com l'ordre d'execució dels scripts d'arrancada. Per veure l'ordre d'execució dels scripts d'arrancada, podeu consultar el manual de `bash` amb la comanda `man bash` i buscar la secció "INVOCATION".
+Aquests scripts s'executen en un ordre específic quan un usuari inicia una sessió de terminal. A continuació, veurem una descripció de cada script d'arrancada i el seu ús, així com l'ordre d'execució dels scripts d'arrancada. Per veure l'ordre d'execució dels scripts d'arrancada, podeu consultar el manual de `bash` amb la comanda `man bash` i buscar la secció *INVOCATION*.
 
 Anem a veure com podem mostrar informació sobre el servidor després de l'arrencada i el login de l'usuari. Aquesta informació pot ser útil per als administradors de sistemes per mostrar informació rellevant sobre el sistema, com ara la càrrega del sistema, l'ús de la CPU, la memòria disponible, la addresa IP i el nombre d'usuaris connectats.
 
