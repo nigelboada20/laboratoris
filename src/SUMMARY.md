@@ -51,3 +51,12 @@
   - [Simulant una corrupció a home i recuperant-la](./Filesystems/corruption.md)
   - [Sistemes de fitxers temporals](./Filesystems/temporal.md)
   - [Explorant d'un sistema de fitxers avançat: `zfs`](./Filesystems/zfs.md)
+
+# Servidors
+
+- [Desplegant un servidor web: Wordpress](./Servers/wordpress-mono/main.md)
+  - [Preparant el servidor](./Servers/wordpress-mono/preparant.md)
+  - [Instal·lant i configurant Apache](./Servers/wordpress-mono/apache.md)
+  - [Instal·lant i configurant MariaDB](./Servers/wordpress-mono/mariadb.md)
+  - [Instal·lant i configurant PHP](./Servers/wordpress-mono/php.md)
+  - [Instal·lant i configurant Wordpress](./Servers/wordpress-mono/wordpress.md)
