@@ -55,8 +55,14 @@
 # Servidors
 
 - [Desplegant un servidor web: Wordpress](./Servers/wordpress-mono/main.md)
-  - [Preparant el servidor](./Servers/wordpress-mono/preparant.md)
-  - [Instal·lant i configurant Apache](./Servers/wordpress-mono/apache.md)
-  - [Instal·lant i configurant MariaDB](./Servers/wordpress-mono/mariadb.md)
-  - [Instal·lant i configurant PHP](./Servers/wordpress-mono/php.md)
-  - [Instal·lant i configurant Wordpress](./Servers/wordpress-mono/wordpress.md)
+  - [Desplegament Monolític amb MV](./Servers/wordpress-mono/main.md)
+    - [Preparant el servidor](./Servers/wordpress-mono/preparant.md)
+    - [Instal·lant i configurant Apache](./Servers/wordpress-mono/apache.md)
+    - [Instal·lant i configurant MariaDB](./Servers/wordpress-mono/mariadb.md)
+    - [Instal·lant i configurant PHP](./Servers/wordpress-mono/php.md)
+    - [Instal·lant i configurant Wordpress](./Servers/wordpress-mono/wordpress.md)
+  - [Desplegament al núvol (AWS)](./Servers/wordpress-aws/main.md)
+    - [Configuració de la clau SSH](./Servers/wordpress-aws/ssh.md)
+    - [Creació d'una instància EC2](./Servers/wordpress-aws/instance.md)
+    - [Bases de dades RDS](./Servers/wordpress-aws/rds.md)
+  
