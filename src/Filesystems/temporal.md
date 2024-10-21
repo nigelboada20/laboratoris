@@ -31,8 +31,6 @@ Per veure el sistema de fitxers muntat, podeu utilitzar la comanda següent:
 df -h
 ```
 
-![Estat inicial dels sistemes de fitxers](img/temporal/df-h.png)
-
 ## Preparació de l'experiment
 
 Per simular el nostre experiment, crearem un script de Python que generi un fitxer gran i realitzi moltes operacions d'escriptura aleatòria. Aquest script pot ser executat en un servidor de còmput per provar el rendiment del sistema de fitxers. Com a parametres d'entrada podem especificar la ruta del fitxer, la mida del fitxer, el nombre d'operacions d'escriptura aleatòria i la mida del bloc d'escriptura.
@@ -81,21 +79,21 @@ Un cop analitzat el codi, podem executar l'experiment per comparar el rendiment 
 
 1. Executem l'experiment amb el sistema de fitxers ext4:
 
-```bash
-python3 simulate_io_intensive.py --file_path /mnt/ext4/large_file.bin --size_in_mb 1024 --num_operations 10000 --block_size 4096
-```
+    ```bash
+    python3 simulate_io_intensive.py --file_path /mnt/ext4/large_file.bin --size_in_mb 1024 --num_operations 10000 --block_size 4096
+    ```
 
 2. Executem l'experiment amb el sistema de fitxers xfs:
 
-```bash
-python3 simulate_io_intensive.py --file_path /mnt/xfs/large_file.bin --size_in_mb 1024 --num_operations 10000 --block_size 4096
-```
+    ```bash
+    python3 simulate_io_intensive.py --file_path /mnt/xfs/large_file.bin --size_in_mb 1024 --num_operations 10000 --block_size 4096
+    ```
 
 3. Executem l'experiment amb el sistema de fitxers tmpfs:
 
-```bash
-python3 simulate_io_intensive.py --file_path /mnt/tmpfs/large_file.bin --size_in_mb 1024 --num_operations 10000 --block_size 4096
-```
+    ```bash
+    python3 simulate_io_intensive.py --file_path /mnt/tmpfs/large_file.bin --size_in_mb 1024 --num_operations 10000 --block_size 4096
+    ```
 
 Ara realitzarem l'experiment 10 vegades per obtenir una mitjana del temps d'execució per a cada sistema de fitxers.
 
@@ -169,4 +167,3 @@ done
 | **Mitjana**          | **2.31** |
 
 Observeu com el sistema de fitxers tmpfs té un rendiment significativament millor que els sistemes de fitxers ext4 i xfs en aquest escenari. Això es deu al fet que tmpfs emmagatzema les dades a la memòria RAM en lloc de l'emmagatzematge en disc, el que permet un accés més ràpid a les dades. Ara bé, cal tenir en compte que les dades emmagatzemades a tmpfs es perden quan el sistema es reinicia.
-
