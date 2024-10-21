@@ -14,7 +14,7 @@ Assumeix l'administració d'un servidor de còmput científic que necessita real
 
 ## Preparació de l'entorn
 
-1. Creeu un nova màquina virtual amb Debian 12. Podeu utiltizar una configuració per defecte amb 2GB de RAM i 20GB d'espai en el disc principal.
+1. Creeu un nova màquina virtual amb Debian 12. Podeu utiltizar una configuració per defecte amb 2GB de RAM i 20GB d'espai en el disc principal. En cas, de tenir problemes de RAM durant l'execució de l'experiment, podeu augmentar la RAM a 4GB. Aquests problemes poden causar que el kernel mati el procés per falta de memòria (*OOM Killer*).
 2. Creeu un disc secundari de 20GB per crear els sistemes de fitxers ext4, xfs i tmpfs.
 3. Particioneu el disc secundari amb 3 particions: ext4, xfs i tmpfs cada una amb 5GB d'espai.
 4. Munteu les particions a les rutes `/mnt/ext4`, `/mnt/xfs` i `/mnt/tmpfs` respectivament.
