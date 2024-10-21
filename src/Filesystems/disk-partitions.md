@@ -193,11 +193,11 @@ En aquest escenari assumirem que volem reorganitzar els directoris del nostre si
     2. Formateja les particions amb els sistemes de fitxers corresponents i assigna les etiquetes.
 
         ```bash
-        tune2fs -L "var" /dev/nvme0n2p1
         mkfs.ext4 /dev/nvme0n2p1
+        tune2fs -L "var" /dev/nvme0n2p1
         mkfs.xfs /dev/nvme0n2p2
-        tune2fs -L "opt" /dev/nvme0n2p3
         mkfs.ext4 /dev/nvme0n2p3
+        tune2fs -L "opt" /dev/nvme0n2p3
         ```
 
         > **Nota**:
