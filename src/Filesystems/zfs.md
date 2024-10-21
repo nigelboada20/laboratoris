@@ -1,5 +1,7 @@
 # Explorant d'un sistema de fitxers avançat: zfs
 
+En aquesta secció, explorarem el sistema de fitxers ZFS (Zettabyte File System). ZFS és un sistema de fitxers avançat que ofereix moltes característiques interessants com ara la integritat de les dades, la compressió, la deduplicació, la replicació, la instantània, la clonació, etc. Per fer-ho utilitzarem la màquina virtual amb Almalinux 9.4.
+
 1. Instal·la el repositori EPEL:
 
       ```sh
@@ -15,7 +17,7 @@
 3. Instal·lació dels paquets necessaris:
 
       ```sh
-      dnf dnf install kernel-devel
+      dnf install kernel-devel
       ```
 
 4. Actualitzar el sistema:
@@ -201,4 +203,3 @@ Una pool ZFS és un conjunt de dispositius de blocs que es poden utilitzar per e
       ```sh
       zpool destroy zfspool
       ```
-
