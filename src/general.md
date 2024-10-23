@@ -15,6 +15,9 @@ Aquest llibre conté el recull de pràctiques ha realitzar a l'assignatura d'Adm
 1. [Instal·lació i Configuració de Màquines Virtuals](./Install/main.md).
 2. [Scripting](./Scripts/main.md).
 3. [Arrancada del Sistema](./Booting/main.md).
+4. [Sistema de Fitxers](./Filesystems/main.md).
+5. [RAID](./Raids/main.md).
+6. [Servidors](./Servers/main.md).
 
 ## Utilització
 

@@ -51,6 +51,11 @@
   - [Simulant una corrupció a home i recuperant-la](./Filesystems/corruption.md)
   - [Sistemes de fitxers temporals](./Filesystems/temporal.md)
   - [Explorant d'un sistema de fitxers avançat: `zfs`](./Filesystems/zfs.md)
+- [Raids](./Raids/main.md)
+  - [Rendiment d'un Entorn RAID](./Raids/rendiment.md)
+  - [Tolerància a Fallades](./Raids/simulant.md)
+  - [Migració d'un servidor tradicional a un servidor amb RAID](./Raids/migration.md)
+  
 
 # Servidors
 
