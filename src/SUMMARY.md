@@ -55,8 +55,13 @@
   - [Rendiment d'un Entorn RAID](./Raids/rendiment.md)
   - [Tolerància a Fallades](./Raids/simulant.md)
   - [Migració d'un servidor tradicional a un servidor amb RAID](./Raids/migration.md)
+- [LVM](./LVM/main.md)
+  - [Anàlisi dels modes striped i linear](./LVM/striped-linear.md)
+  - [Desplegament d'una web amb LVM](./LVM/usage.md)
+  - [Gestió de fallades](./LVM/failures.md)
+  - [Snapshots](./LVM/snapshots.md)
+  - [Mirroring](./LVM/mirroring.md)
   
-
 # Servidors
 
 - [Desplegant un servidor web: Wordpress](./Servers/wordpress-mono/main.md)
