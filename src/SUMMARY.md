@@ -79,3 +79,10 @@
 # AWS
   - [AWS S3](./AWS/s3.md)
   - [AWS Networking](./AWS/xarxa.md)
+  - [Arquitectura Escalable per a WordPress](./AWS/wordpress/main.md)
+    - [Creació de la VPC i les subxarxes](./AWS/wordpress/vpc-networking.md)
+    - [Taules d'Enrutament i Associacions](./AWS/wordpress/routing.md)
+    - [Grups de Seguretat](./AWS/wordpress/security.md)
+    - [Creació de la Base de Dades RDS](./AWS/wordpress/rds.md)
+    - [Creació de l'instància EC2](./AWS/wordpress/ec2.md)
+    - [Wordpress](./AWS/wordpress/wordpress.md)
