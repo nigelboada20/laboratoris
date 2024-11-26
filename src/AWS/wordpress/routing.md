@@ -10,12 +10,12 @@ Per gestionar les rutes del tràfic i determinar com es distribueix entre les su
 En primer lloc crearem un Gateway d'Internet per a la nostra VPC:
 
 ```yaml
-AMSAIG:
+MSAIGW:
     Type: AWS::EC2::InternetGateway
     Properties:
-        Tags:
-            - Key: Name
-              Value: AMSA-IG
+      Tags:
+        - Key: Name
+          Value: AMSA-IGW
 ```
 
 ![Gateway d'Internet per a la VPC](../figs/wordpress/ig.png)
@@ -23,11 +23,11 @@ AMSAIG:
 I l'associarem a la nostra VPC:
 
 ```yaml
-AMSAIGAttachment:
+AMSAIGWAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
-        VpcId: !Ref AMSAVPC
-        InternetGatewayId: !Ref AMSAIG
+      VpcId: !Ref AMSAVPC
+      InternetGatewayId: !Ref AMSAIGW
 ```
 
 ![Associació del Gateway d'Internet amb la VPC](../figs/wordpress/attachIG.png)
@@ -68,7 +68,7 @@ AMSAIGAttachment:
           Properties:
               RouteTableId: !Ref AMSAFront01RouteTable
               DestinationCidrBlock: 0.0.0.0/0
-              GatewayId: !Ref AMSAIG
+              GatewayId: !Ref AMSAIGW
       ```
 
       Per fer-ho, navegarem a la consola de VPC d'AWS, seleccionarem la subxarxa **AMSA-Front-01** anireu a la secció *Routes* i clicareu a *Edit routes*. A continuació, **Add route** i editareu (Destination: 0.0.0.0/0; Target:Seleccionar el **AMSA-IG**).

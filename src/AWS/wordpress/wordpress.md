@@ -68,34 +68,42 @@ Aneu a la secció de **Advanced Details** i afegiu el script anterior a la secci
 ![Configuració de la plantilla de llançament](../figs/wordpress/launch-template-05.png)
 
 ```yaml
-AMSAWebServerTemplate:
+AMSAWSWPLT01:
     Type: AWS::EC2::LaunchTemplate
     Properties:
-        LaunchTemplateName: AMSA-WS-WP-Template
-        LaunchTemplateData:
-            ImageId: ami-0c55b159cbfafe1f0
-            InstanceType: t2.micro
-            KeyName: AMSA-KEY
-            SecurityGroupIds:
-                - !Ref AMSAWebSG
-            UserData:
-                Fn::Base64: !Sub |
-                    #!/bin/bash
-                    # sudo bash install_wp.sh
-                    dnf install -y wget php-mysqlnd httpd php-fpm php-mysqli php-json php php-devel php-gd expect
-                    cd /tmp
-                    wget https://wordpress.org/latest.tar.gz
-                    tar -xzf latest.tar.gz
-                    cp wordpress/wp-config-sample.php wordpress/wp-config.php
-                    sed -i "s/database_name_here/wordpress/g" wordpress/wp-config.php
-                    sed -i "s/username_here/amsa-wordpress-user/g" wordpress/wp-config.php
-                    sed -i "s/password_here/h0dc-w0rdpr3ss-p4ssw0rd/g" wordpress/wp-config.php
-                    sed -i "s/localhost/amsa-db.cztwlalq0ipf.us-east-1.rds.amazonaws.com/g" wordpress/wp-config.php
-                    cp -r wordpress/* /var/www/html/
-                    sed -i 's/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf
-                    chown -R apache:apache /var/www
-                    chmod 2775 /var/www
-                    systemctl restart httpd
+      LaunchTemplateName: AMSA-WS-WP-LT01
+      LaunchTemplateData:
+        ImageId: ami-063d43db0594b521b
+        InstanceType: t2.micro
+        NetworkInterfaces:
+          - DeviceIndex: 0
+            AssociatePublicIpAddress: true
+            SubnetId: !Ref AMSAFront01
+            Groups:
+                - Ref: AMSAWebSG
+        UserData: !Base64
+          Fn::Sub: |
+            #!/bin/bash
+            dnf install -y wget php-mysqlnd httpd php-fpm php-mysqli php-json php php-devel php-gd expect
+            cd /tmp
+            wget https://wordpress.org/latest.tar.gz
+            tar -xzf latest.tar.gz
+            cp wordpress/wp-config-sample.php wordpress/wp-config.php
+            sed -i "s/database_name_here/wordpress/g" wordpress/wp-config.php
+            sed -i "s/username_here/amsa-wordpress-user/g" wordpress/wp-config.php
+            sed -i "s/password_here/h0dc-w0rdpr3ss-p4ssw0rd/g" wordpress/wp-config.php
+            sed -i "s/localhost/${AMSADataDB.Endpoint.Address}/g" wordpress/wp-config.php
+            cp -r wordpress/* /var/www/html/
+            sed -i 's/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf
+            chown -R apache:apache /var/www
+            chmod 2775 /var/www
+            systemctl enable httpd
+            systemctl restart httpd
+      TagSpecifications:
+        - ResourceType: launch-template
+          Tags:
+            - Key: Name
+              Value: AMSA-WS-WP-LT01
 ```
 
 Un cop creada la plantilla de llançament, podeu utilitzar-la per crear instàncies EC2 amb WordPress ja configurat i preparades per connectar amb la vostra base de dades RDS.

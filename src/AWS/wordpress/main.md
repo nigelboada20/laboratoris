@@ -16,3 +16,9 @@ En aquesta pràctica, dissenyarem i implementarem una arquitectura escalable i s
 4. [Creació de la Base de Dades RDS](./rds.md)
 5. [Creació de l'instància EC2](./ec2.md)
 6. [Wordpress](./wordpress.md)
+
+## Cloud Formation
+
+Us he preparat diferents fitxers de plantilles de CloudFormation per a desplegar diferents versions de la infraestructura.
+
+1. Versió 1: En aquesta versió es desplegarà la VPC, les subxarxes, els grups de seguretat, la base de dades RDS i les instàncies EC2. No s'instal·larà WordPress. A més a més, es crearan les taules d'enrutament i les associacions necessàries. Podeu trobar el fitxer de plantilla a [infra_v1.yaml](../src/wordpress/infra_v1.yaml).

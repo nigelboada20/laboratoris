@@ -34,24 +34,27 @@ La resta de paràmetres es poden deixar per defecte a les seccions de *Database 
 ![Configuració *Database authentication* i *Backup*](../figs/wordpress/db_05.png)
 
 ```yaml
-AMSADataBase:
+AMSADataDB:
     Type: AWS::RDS::DBInstance
     Properties:
-        DBInstanceIdentifier: AMSA-DB
-        DBInstanceClass: db.t2.micro
-        Engine: mariadb
-        EngineVersion: 10.11.9
-        MasterUsername: admin
-        MasterUserPassword: h0dc?r00t?p4ssw0rd
-        AllocatedStorage: 20
-        DBSubnetGroupName: !Ref AMSASubnetGroup
-        VPCSecurityGroups:
-            - !Ref AMSADbSG
-        PubliclyAccessible: false
-        MultiAZ: false
-    Tags:
+      AllocatedStorage: '20'
+      DBInstanceIdentifier: AMSA-DB
+      DBInstanceClass: db.t4g.micro
+      Engine: mariadb
+      EngineVersion: 10.11.9
+      MasterUsername: admin
+      MasterUserPassword: h0dc?r00t?p4ssw0rd
+      VPCSecurityGroups:
+        - !GetAtt AMSADataSG.GroupId
+      DBSubnetGroupName: !Ref AMSADBSubnetGroup
+      MultiAZ: false
+      PubliclyAccessible: false
+      Tags:
         - Key: Name
-          Value: AMSA-DB
+          Value: AMSA-Data-DB
+    DependsOn: 
+        - AMSADataSG
+        - AMSADBSubnetGroup
 ```
 
 ![Configuració de la base de dades RDS](../figs/wordpress/db.png)
