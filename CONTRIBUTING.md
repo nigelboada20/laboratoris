@@ -34,7 +34,7 @@ També, pots anar a la nova branca fent click al menu desplegable i seleccionant
 
 ![](./figs/CONTRIBUTING/PR.png)
 
-* Proporciona una descripció detallada dels canvis que has fet. A més, pots afegir captures de pantalla o informació addicional per ajudar els revisors a entendre els teus canvis. Fes clic a **New pull request** i beuras una pantalla com la següent:
+* Proporciona una descripció detallada dels canvis que has fet. A més, pots afegir captures de pantalla o informació addicional per ajudar els revisors a entendre els teus canvis. Fes clic a **New pull request** i veuràs una pantalla com la següent:
 
 ![](./figs/CONTRIBUTING/PR2.png)
 
